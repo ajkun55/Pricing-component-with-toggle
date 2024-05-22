@@ -1,0 +1,205 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+    --Linear-Gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+
+    --clr-Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --clr-Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --clr-Grayish-Blue: hsl(233, 13%, 49%);
+    --clr-Dark-Grayish-Blue: hsl(232, 13%, 33%);
+
+    --radius-: 0.7rem;
+}
+
+
+body{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    min-height: 100vh;
+    background: url('./images/bg-top.svg'), url('./images/bg-bottom.svg') var(--clr-Very-Light-Grayish-Blue);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, bottom left;  color: var(--clr-Dark-Grayish-Blue);
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+h2{
+    margin-block: 4rem 2.5rem;
+}
+
+.choice{
+    color: var(--clr-Grayish-Blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    label{
+        margin-inline: 1.5rem;
+    }
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.card{
+    width: min(350px, 90%);
+    height: 455px;
+    display: grid;
+    padding: 30px;
+    align-items: center;
+}
+
+.basic, .master{
+    background-color: white;
+    button{
+        background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+        color: var(--clr-Very-Light-Grayish-Blue);
+    }
+}
+.basic{
+    border-top-left-radius:  var(--radius-);
+    border-bottom-left-radius:  var(--radius-);
+}
+.master{
+    border-top-right-radius:  var(--radius-);
+    border-bottom-right-radius:  var(--radius-);
+}
+
+.professional{
+    color: var(--clr-Very-Light-Grayish-Blue);
+    position: relative;
+    button{
+        background: var(--clr-Very-Light-Grayish-Blue);
+        color: hsl(237, 63%, 64%);
+    }
+}
+
+.professional::before{
+    content:'';
+    position: absolute;
+    top: -5%;
+    width: 100%;
+    height: 110%;
+    background: var(--Linear-Gradient);
+    z-index: -2;
+    border-radius: var(--radius-);
+}
+
+button{
+    height: 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.price{
+    font-size: 3.5rem;
+}
+
+.card p{
+    border-top: 1px solid var(--clr-Light-Grayish-Blue);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card p:last-of-type{
+    border-bottom: 1px solid var(--clr-Light-Grayish-Blue);
+}
+
+
+
+/* The toggle switch      */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  right: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input + .slider {
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(-26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(-26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*      */
+
+.hidden{
+    display: none;
+}
+
+@media (width < 760px){
+    .cards{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        border-radius: var(--radius-);
+        margin-block: 1.5rem;
+    }
+
+}
