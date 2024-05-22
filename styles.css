@@ -32,7 +32,7 @@ body{
 }
 
 h2{
-    margin-block: 4rem 2.5rem;
+    margin-block: 5rem 2.5rem;
 }
 
 .choice{
@@ -67,6 +67,12 @@ h2{
         color: var(--clr-Very-Light-Grayish-Blue);
     }
 }
+.basic button:hover, .master button:hover{
+    color: hsl(237, 63%, 64%);
+    background: transparent;
+    border: 1px solid var(--clr-Grayish-Blue);
+}
+
 .basic{
     border-top-left-radius:  var(--radius-);
     border-bottom-left-radius:  var(--radius-);
@@ -83,6 +89,11 @@ h2{
         background: var(--clr-Very-Light-Grayish-Blue);
         color: hsl(237, 63%, 64%);
     }
+}
+.professional button:hover{
+    color: var(--clr-Very-Light-Grayish-Blue);
+    background: transparent;
+    border: 1px solid var(--clr-Very-Light-Grayish-Blue);
 }
 
 .professional::before{
@@ -132,6 +143,10 @@ button{
   display: inline-block;
   width: 60px;
   height: 34px;
+}
+
+.switch:hover{
+    opacity: 0.5;
 }
 
 .switch input { 
